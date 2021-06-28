@@ -111,6 +111,8 @@ export class WebAdapter extends BotAdapter {
       ws.on("pong", heartbeat);
 
       ws.on("message", (payload) => {
+        debug("incoming < ", payload);
+
         try {
           const message = JSON.parse(payload);
 
