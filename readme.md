@@ -1,8 +1,11 @@
 # botbuilder-adapter-web
+
 Connect [Botkit](https://www.npmjs.com/package/botkit) or [BotBuilder](https://www.npmjs.com/package/botbuilder) to the Web.
 
 This package contains an adapter that communicates directly with the web via webhooks or websocket connections.
 This package can be used alongside your favorite bot development framework to build bots that work on a website or within an existing app.
+
+## added attachment to websockets message
 
 ## Install Package
 
@@ -15,7 +18,7 @@ npm install --save botbuilder-adapter-web
 Import the adapter class into your code:
 
 ```javascript
-const { WebAdapter } = require('botbuilder-adapter-web');
+const { WebAdapter } = require("botbuilder-adapter-web");
 ```
 
 ## Get Started
@@ -37,14 +40,14 @@ Developers can then bind to Botkit's event emitting system using `controller.on`
 ```javascript
 const adapter = new WebAdapter();
 const controller = new Botkit({
-    adapter,
-    // ...other options
+  adapter,
+  // ...other options
 });
 
 // TODO: expose chat client
 
-controller.on('message', async(bot, message) => {
-    await bot.reply(message, 'I heard a message!');
+controller.on("message", async (bot, message) => {
+  await bot.reply(message, "I heard a message!");
 });
 ```
 
@@ -56,7 +59,7 @@ Alternately, developers may choose to use `WebAdapter` with BotBuilder. With Bot
 
 ## Class Reference
 
-* [WebAdapter](../docs/reference/web.md#webadapter)
+- [WebAdapter](../docs/reference/web.md#webadapter)
 
 ## Reference Chat Client
 
@@ -66,12 +69,12 @@ This package includes [a reference implementation of a chat client written in HT
 
 ## Event List
 
-| Event | Description
-|--- |---
-| message | a message sent by the user
-| hello | event sent when a user first connects
-| welcome_back | event sent when a user reconnects
-| identify | an extended user profile is being sent by the client to be associated with the user id
+| Event        | Description                                                                            |
+| ------------ | -------------------------------------------------------------------------------------- |
+| message      | a message sent by the user                                                             |
+| hello        | event sent when a user first connects                                                  |
+| welcome_back | event sent when a user reconnects                                                      |
+| identify     | an extended user profile is being sent by the client to be associated with the user id |
 
 ## Botkit Extensions
 
