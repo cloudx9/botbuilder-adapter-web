@@ -190,7 +190,7 @@ export class WebAdapter extends BotAdapter {
     const message = {
       type: activity.type,
       text: activity.text,
-      attachments: activity.attachments || {},
+      attachments: activity.attachments || [],
     };
 
     // if channelData is specified, overwrite any fields in message object
